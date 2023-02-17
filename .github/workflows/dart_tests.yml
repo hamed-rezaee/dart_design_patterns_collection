@@ -1,0 +1,33 @@
+name: Dart tests and analysis
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Dart environment
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+      - name: Run analysis
+        run: dart analyze
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Dart environment
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+      - name: Run tests
+        run: dart run test
