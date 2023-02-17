@@ -5,29 +5,18 @@ on:
     branches:
       - main
 
-jobs:
-  analyze:
-    name: Analyze
+  Dart tests and analysis:
+    name: Dart tests and analysis
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Dart environment
-        uses: dart-lang/setup-dart@v1
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+      - uses: invertase/github-action-dart-analyzer@v1
+        with:
+          working-directory: ./
         with:
           sdk: stable
       - name: Run analysis
         run: dart analyze
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Dart environment
-        uses: dart-lang/setup-dart@v1
-        with:
-          sdk: stable
       - name: Run tests
         run: dart run test
