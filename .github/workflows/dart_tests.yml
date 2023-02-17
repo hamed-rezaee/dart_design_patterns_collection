@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    name: Dart tests and analysis
+    name: Dart Design Patterns Analysis and Tests
     runs-on: ubuntu-latest
     steps:
       - name: Setup Repository
