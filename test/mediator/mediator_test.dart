@@ -1,5 +1,6 @@
-import 'package:dart_design_patterns/mediator.dart';
 import 'package:test/test.dart';
+
+import 'package:dart_design_patterns/mediator/mediator.dart';
 
 void main() {
   test('Test ConcreteColleague receives message from ConcreteMediator.', () {

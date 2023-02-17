@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import 'package:dart_design_patterns/observer.dart';
+import 'package:dart_design_patterns/observer/observer.dart';
 
 void main() {
   group('Observer pattern test =>', () {
