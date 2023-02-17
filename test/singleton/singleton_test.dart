@@ -4,7 +4,7 @@ import 'package:dart_design_patterns/singleton/singleton.dart';
 
 void main() {
   group('Singleton pattern test =>', () {
-    test('Should return the same instance.', () {
+    test('should return the same instance.', () {
       final Singleton s1 = Singleton();
       final Singleton s2 = Singleton();
 
@@ -12,8 +12,8 @@ void main() {
     });
   });
 
-  group('LazySingleton', () {
-    test('Should return the same instance.', () {
+  group('Lazy Singleton pattern test =>', () {
+    test('should return the same instance.', () {
       final LazySingleton s1 = LazySingleton();
       final LazySingleton s2 = LazySingleton();
 
