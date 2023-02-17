@@ -2,22 +2,28 @@ name: Dart tests and analysis
 
 on:
   push:
-    branches:
-      - main
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
-  Dart tests and analysis:
-    name: Dart tests and analysis
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1
-      - uses: invertase/github-action-dart-analyzer@v1
-        with:
-          working-directory: ./
-        with:
-          sdk: stable
-      - name: Run analysis
+      - name: Setup Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Install Pub Dependencies
+        run: dart pub get
+
+      - name: Verify Formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze Project Source
         run: dart analyze
+
       - name: Run tests
-        run: dart run test
+        run: dart test
