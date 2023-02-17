@@ -5,6 +5,7 @@ on:
     branches:
       - main
 
+jobs:
   Dart tests and analysis:
     name: Dart tests and analysis
     runs-on: ubuntu-latest
