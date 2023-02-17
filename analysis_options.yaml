@@ -1,7 +1,5 @@
 analyzer:
   exclude:
-    - lib/generated/**
-    - lib/core/db/moor/moor_helper.g.dart
 
   strong-mode:
     implicit-dynamic: false
