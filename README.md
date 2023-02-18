@@ -1,3 +1,7 @@
+## [Factory Method Pattern](lib/factory_method/factory_method.dart)
+
+The Factory Method pattern is a creational design pattern that provides an interface for creating objects, but allows subclasses to alter the type of objects that will be created. The Factory Method pattern is useful when you want to decouple the creation of an object from its use, and when you need to create objects that have varying implementations or configurations.
+
 ## [Mediator Pattern](lib/mediator/mediator.dart)
 
 The Mediator pattern is a behavioral design pattern that helps to reduce the dependencies between the objects in a system by introducing a mediator object that acts as a communication hub between the objects. In this pattern, the objects don't communicate with each other directly, but instead, they communicate through the mediator. This helps to improve the maintainability and scalability of the system.
