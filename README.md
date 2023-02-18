@@ -75,19 +75,18 @@ The Mediator pattern is a behavioral design pattern that helps to reduce the dep
 The Observer pattern is a behavioral design pattern that is used to establish a one-to-many relationship between objects. In this pattern, an object (the subject) maintains a list of its dependents (observers) and notifies them automatically when any changes to its state occur. The Observer pattern is useful when you have a complex system with many objects that need to stay updated with the state changes of one or more objects.
 
 ```
-   +-----------+            +----------------------+
-   |  Subject  |<>--------->|       Observer       |
-   +-----------+            +----------------------+
-   | +notify() |            | +update()            |
-   +-----------+            +----------------------+
-         ^
-         |
-   +-----------+
-   |  Concrete |
-   |  Subject  |
-   +-----------+
-   |           |
-   +-----------+
+   +----------------+            +----------------------+
+   |  Subject       |<>--------->|       Observer       |
+   +----------------+            +----------------------+
+   | +notify()      |            | +update()            |
+   +----------------+            +----------------------+
+            ^
+            |
+   +--------------------+
+   |  Concrete Subject  |
+   +--------------------+
+   |                    |
+   +--------------------+
 ```
 
 #### Pros:
