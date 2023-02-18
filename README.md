@@ -78,10 +78,9 @@ The Observer pattern is a behavioral design pattern that is used to establish a 
    +-----------+            +----------------------+
    |  Subject  |<>--------->|       Observer       |
    +-----------+            +----------------------+
-   |           |            | +update()            |
+   | +notify() |            | +update()            |
    +-----------+            +----------------------+
          ^
-         |
          |
    +-----------+
    |  Concrete |
