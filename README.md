@@ -103,6 +103,47 @@ The Observer pattern is a behavioral design pattern that is used to establish a 
 - Inconsistent state: The Observer Pattern can lead to inconsistent state between objects, especially if the dependent objects are not updated in the correct order or frequency.
 - Security issues: The Observer Pattern can create security issues if sensitive information is passed along to untrusted observers.
 
+### [Proxy Pattern](lib/proxy/proxy.dart)
+
+The Proxy Design Pattern is a structural design pattern that provides a surrogate or placeholder for another object to control access to it. It allows us to create an intermediary object that acts as a stand-in for another object, called the "real subject," and manages all communication with the real subject.
+In general, the Proxy Design Pattern is used to provide a level of indirection between clients and the real object, with the proxy object acting as an intermediary. This can provide benefits such as increased security, performance improvements, and more flexible or modular code design.
+
+```
+           +-------------+
+           |   Subject   |
+           +-------------+
+           | + request() |
+           +------+------+
+                  |
+                  |
+           +-------------+
+           | RealSubject |
+           +-------------+
+           | + request() |
+           +------+------+
+                  |
+                  |
+   +--------------+-------------+
+   |  Proxy                     |
+   +----------------------------+
+   | - realSubject: RealSubject |
+   | + request()                |
+   +----------------------------+
+```
+
+#### Pros:
+
+- Increased security: By using a proxy object to control access to the real object, we can ensure that only authorized clients can access the real object.
+- Improved performance: If the real object is expensive to create or use, the proxy object can cache results, delay the creation of the real object until it is actually needed, or perform other optimizations to improve performance.
+- Modular design: The proxy object can provide a modular design that separates concerns between the client and the real object. This can make the code easier to maintain and update.
+- Flexibility: The proxy object can provide additional functionality such as logging, caching, and error checking, without modifying the real object's code.
+
+#### Cons:
+
+- Additional complexity: The use of a proxy object can add an additional layer of complexity to the code, especially if the proxy object is designed to provide additional functionality.
+- Potential overhead: The use of a proxy object can potentially add overhead to the system by introducing additional processing and communication between the client and the real object.
+- Reduced performance: In some cases, the use of a proxy object can actually reduce performance, especially if the proxy object is designed to perform additional checks or validations before forwarding the request to the real object.
+
 ### [Singleton Pattern](lib/singleton/singleton.dart)
 
 The Singleton pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to it.
