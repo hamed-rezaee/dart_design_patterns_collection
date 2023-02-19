@@ -4,11 +4,21 @@ This repository contains examples of common design patterns with accompanying di
 
 ### What are Design Patterns?
 
-Design patterns are reusable solutions to common software engineering problems. They provide a standard way to solve recurring problems in software development, making the code more modular, maintainable, and extensible. There are many design patterns, and understanding how to use them can significantly improve the quality of your code.
+> Design patterns are reusable solutions to common software engineering problems. They provide a standard way to solve recurring problems in software development, making the code more modular, maintainable, and extensible. There are many design patterns, and understanding how to use them can significantly improve the quality of your code.
+
+### Repository Contents
+
+The repository contains examples of the following design patterns:
+
+- [Factory Method Pattern](lib/factory_method/)
+- [Mediator Pattern](lib/mediator/)
+- [Observer Pattern](lib/observer/)
+- [Proxy Pattern](lib/proxy/)
+- [Singleton Pattern](lib/singleton/)
 
 ---
 
-### [Factory Method Pattern](lib/factory_method/factory_method.dart)
+### [Factory Method Pattern](lib/factory_method/)
 
 The Factory Method pattern is a creational design pattern that provides an interface for creating objects, but allows subclasses to alter the type of objects that will be created. The Factory Method pattern is useful when you want to decouple the creation of an object from its use, and when you need to create objects that have varying implementations or configurations.
 
@@ -41,7 +51,7 @@ The Factory Method pattern is a creational design pattern that provides an inter
 - Inflexibility: If the object creation process needs to be modified or customized on a per-instance basis, the Factory Method Pattern may not be flexible enough to handle these requirements.
 - Abstraction: The Factory Method Pattern requires a level of abstraction and generalization that may not be appropriate for all systems.
 
-### [Mediator Pattern](lib/mediator/mediator.dart)
+### [Mediator Pattern](lib/mediator/)
 
 The Mediator pattern is a behavioral design pattern that helps to reduce the dependencies between the objects in a system by introducing a mediator object that acts as a communication hub between the objects. In this pattern, the objects don't communicate with each other directly, but instead, they communicate through the mediator. This helps to improve the maintainability and scalability of the system.
 
@@ -80,7 +90,7 @@ The Mediator pattern is a behavioral design pattern that helps to reduce the dep
 - Single point of failure: The Mediator Pattern can create a single point of failure in the system, since all objects rely on the mediator object to coordinate their interactions.
 - Tight coupling with mediator: If objects become too tightly coupled with the mediator object, it can lead to increased complexity and reduced flexibility.
 
-### [Observer Pattern](lib/observer/observer.dart)
+### [Observer Pattern](lib/observer/)
 
 The Observer pattern is a behavioral design pattern that is used to establish a one-to-many relationship between objects. In this pattern, an object (the subject) maintains a list of its dependents (observers) and notifies them automatically when any changes to its state occur. The Observer pattern is useful when you have a complex system with many objects that need to stay updated with the state changes of one or more objects.
 
@@ -113,7 +123,7 @@ The Observer pattern is a behavioral design pattern that is used to establish a 
 - Inconsistent state: The Observer Pattern can lead to inconsistent state between objects, especially if the dependent objects are not updated in the correct order or frequency.
 - Security issues: The Observer Pattern can create security issues if sensitive information is passed along to untrusted observers.
 
-### [Proxy Pattern](lib/proxy/proxy.dart)
+### [Proxy Pattern](lib/proxy/)
 
 The Proxy Design Pattern is a structural design pattern that provides a surrogate or placeholder for another object to control access to it. It allows us to create an intermediary object that acts as a stand-in for another object, called the "real subject," and manages all communication with the real subject.
 In general, the Proxy Design Pattern is used to provide a level of indirection between clients and the real object, with the proxy object acting as an intermediary. This can provide benefits such as increased security, performance improvements, and more flexible or modular code design.
@@ -154,7 +164,7 @@ In general, the Proxy Design Pattern is used to provide a level of indirection b
 - Potential overhead: The use of a proxy object can potentially add overhead to the system by introducing additional processing and communication between the client and the real object.
 - Reduced performance: In some cases, the use of a proxy object can actually reduce performance, especially if the proxy object is designed to perform additional checks or validations before forwarding the request to the real object.
 
-### [Singleton Pattern](lib/singleton/singleton.dart)
+### [Singleton Pattern](lib/singleton/)
 
 The Singleton pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to it.
 
