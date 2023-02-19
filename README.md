@@ -1,3 +1,13 @@
+## Common Design Patterns in Dart
+
+This repository contains examples of common design patterns with accompanying diagrams, class implementations, and information about their usage, pros and cons.
+
+### What are Design Patterns?
+
+Design patterns are reusable solutions to common software engineering problems. They provide a standard way to solve recurring problems in software development, making the code more modular, maintainable, and extensible. There are many design patterns, and understanding how to use them can significantly improve the quality of your code.
+
+---
+
 ### [Factory Method Pattern](lib/factory_method/factory_method.dart)
 
 The Factory Method pattern is a creational design pattern that provides an interface for creating objects, but allows subclasses to alter the type of objects that will be created. The Factory Method pattern is useful when you want to decouple the creation of an object from its use, and when you need to create objects that have varying implementations or configurations.
