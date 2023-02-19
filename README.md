@@ -4,7 +4,7 @@ This repository contains examples of common design patterns with accompanying di
 
 ### What are Design Patterns?
 
-> Design patterns are reusable solutions to common software engineering problems. They provide a standard way to solve recurring problems in software development, making the code more modular, maintainable, and extensible. There are many design patterns, and understanding how to use them can significantly improve the quality of your code.
+Design patterns are reusable solutions to common software engineering problems. They provide a standard way to solve recurring problems in software development, making the code more modular, maintainable, and extensible. There are many design patterns, and understanding how to use them can significantly improve the quality of your code.
 
 ### Repository Contents
 
