@@ -14,6 +14,7 @@ The repository contains examples of the following design patterns:
 - [Mediator Pattern](lib/mediator/)
 - [Observer Pattern](lib/observer/)
 - [Proxy Pattern](lib/proxy/)
+- [Repository Pattern](lib/repository/)
 - [Singleton Pattern](lib/singleton/)
 
 ---
@@ -135,13 +136,11 @@ In general, the Proxy Design Pattern is used to provide a level of indirection b
            | + request() |
            +------+------+
                   |
-                  |
            +-------------+
            | RealSubject |
            +-------------+
            | + request() |
            +------+------+
-                  |
                   |
    +--------------+-------------+
    |  Proxy                     |
@@ -163,6 +162,42 @@ In general, the Proxy Design Pattern is used to provide a level of indirection b
 - Additional complexity: The use of a proxy object can add an additional layer of complexity to the code, especially if the proxy object is designed to provide additional functionality.
 - Potential overhead: The use of a proxy object can potentially add overhead to the system by introducing additional processing and communication between the client and the real object.
 - Reduced performance: In some cases, the use of a proxy object can actually reduce performance, especially if the proxy object is designed to perform additional checks or validations before forwarding the request to the real object.
+
+### [Repository Pattern](lib/repository/)
+
+The Repository Pattern is a structural pattern that defines a structure for organizing the code that separates the concerns of data access from the business logic of an application. It does this by introducing a layer of abstraction between the application and the data storage layer, which helps to decouple the code and improve its modularity.
+
+```
+   +-----------------------+           +-----------------------+
+   | Application Code      |           | Repository            |
+   +-----------------------+           +-----------------------+
+   | + fetch()             |  uses     | + fetch()             |
+   | + update()            | --------> | + update()            |
+   | + delete()            |           | + delete()            |
+   +-----------------------+           | + ...                 |
+               |                       +-----------------------+
+               v                                   |
+      +-----------------+                          v
+      | Data            |              +-----------------------+
+      +-----------------+              | Data Access Code      |
+      | + field: type   |              +-----------------------+
+      | + field: type   |              | + fetch()             |
+      | + ...           |              | + update()            |
+      +-----------------+              | + delete()            |
+                                       +-----------------------+
+```
+
+#### Pros:
+
+- Separation of concerns: The Repository Pattern helps to separate the data access logic from the rest of the application code. This makes it easier to maintain and test the code, as well as making it - more modular and flexible.
+- Abstraction: The Repository Pattern provides an abstraction layer between the application code and the data access code, which allows the data access implementation to be changed without affecting the application code.
+- Reusability: The Repository Pattern promotes reusability of code by defining a common interface that can be used by multiple parts of the application.
+
+#### Cons:
+
+- Overhead: Implementing the Repository Pattern can add extra overhead to the code, as it requires additional classes and interfaces to be defined. This can make the code more complex and difficult to understand.
+- Complexity: The Repository Pattern can be complex to implement correctly, especially when dealing with complex data structures or queries.
+- Learning curve: The Repository Pattern requires a certain level of understanding of software design patterns and abstraction, which may take time to learn and implement correctly.
 
 ### [Singleton Pattern](lib/singleton/)
 
