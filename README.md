@@ -10,6 +10,7 @@ Design patterns are reusable solutions to common software engineering problems. 
 
 The repository contains examples of the following design patterns:
 
+- [Decorator Pattern](lib/decorator/)
 - [Factory Method Pattern](lib/factory_method/)
 - [Mediator Pattern](lib/mediator/)
 - [Observer Pattern](lib/observer/)
@@ -18,6 +19,51 @@ The repository contains examples of the following design patterns:
 - [Singleton Pattern](lib/singleton/)
 
 ---
+
+### [Decorator Pattern](lib/decorator/)
+
+The Decorator pattern is a structural design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects in the same class.
+
+In the Decorator pattern, a decorator class is used to wrap the original object and provide additional functionality to it. The decorator class has the same interface as the original object, so it can be used in the same way as the original object. However, the decorator class adds new functionality by modifying the behavior of the original object.
+
+```
+                 +----------------+
+                 |    Component   |
+                 +----------------+
+                 | + operation()  |
+                 +----------------+
+                          ^
+                          |
+                 +----------------+
+                 |    Decorator   |
+                 +----------------+
+                 | - component    |
+                 | + operation()  |
+                 +----------------+
+                          ^
+                          |
+           +--------------------------+
+           |                          |
+   +----------------+         +----------------+
+   | Concrete CompA |         | Concrete CompB |
+   +----------------+         +----------------+
+   | + operation()  |         | + operation()  |
+   +----------------+         +----------------+
+```
+
+#### Pros:
+
+- Encapsulation: The Decorator pattern allows the functionality of an object to be encapsulated within a decorator object. This makes it easy to add or remove functionality without affecting the underlying object, and helps to keep the code organized and maintainable.
+- Flexibility: The Decorator pattern allows new functionality to be added to an object at runtime, which can be useful in situations where the behavior of an object needs to be customized or extended dynamically.
+- Open-closed principle: The Decorator pattern supports the open-closed principle, which states that classes should be open for extension but closed for modification. This means that new functionality can be added to the application without modifying existing code.
+- Single Responsibility Principle: The Decorator pattern follows the Single Responsibility Principle, which states that a class should have only one reason to change. This makes the code more modular and easier to understand.
+
+#### Cons:
+
+- Complexity: The Decorator pattern can result in a large number of small classes, which can be difficult to manage and maintain. This can make the code more complex and harder to understand, especially if there are many layers of decorators.
+- Performance: The Decorator pattern can have a performance impact, especially if many decorators are used. Each decorator adds a layer of indirection, which can slow down the application.
+- Design overhead: The Decorator pattern requires a more complex design than simpler patterns like inheritance or composition. This can increase the initial design overhead and make it harder to get started with the project.
+- Dependency injection: The Decorator pattern can make it harder to use dependency injection frameworks, as the objects being decorated may need to be constructed in a certain order.
 
 ### [Factory Method Pattern](lib/factory_method/)
 
