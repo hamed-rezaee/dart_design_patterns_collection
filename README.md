@@ -10,6 +10,7 @@ Design patterns are reusable solutions to common software engineering problems. 
 
 The repository contains examples of the following design patterns:
 
+- [Adapter Pattern](lib/adapter/)
 - [Decorator Pattern](lib/decorator/)
 - [Factory Method Pattern](lib/factory_method/)
 - [Mediator Pattern](lib/mediator/)
@@ -19,6 +20,32 @@ The repository contains examples of the following design patterns:
 - [Singleton Pattern](lib/singleton/)
 
 ---
+
+### [Adapter Pattern](lib/adapter/)
+
+The Adapter Pattern is a structural design pattern that allows two incompatible interfaces to work together by creating an adapter object that acts as a bridge between them. The Adapter Pattern is used when the interface of an existing class does not match the interface that the client expects. It is also used to reuse existing code with a new system, without having to modify the existing code.
+
+```
+   +--------------+         +--------------------+
+   | Target       |         | Adapter            |        +----------------------
+   +--------------+         +--------------------+        | Adaptee             |
+   | + request()  | <------ | - adaptee: Adaptee | -----> +---------------------+
+   +--------------+         | + request()        |        | + specificRequest() |
+                            +--------------------+        +---------------------+
+```
+
+#### Pros:
+
+- Reusability: The Adapter pattern allows existing classes to be reused in new contexts without modifying their original code. This can save time and effort, as well as promote code reuse.
+- Interoperability: The Adapter pattern provides a way to interface between two incompatible or unrelated classes. This can be especially useful when working with third-party libraries or legacy code.
+- Decoupling: The Adapter pattern can help to decouple client code from the details of the Adaptee class, making it easier to modify or replace the Adaptee without affecting the client code.
+- Flexibility: The Adapter pattern can provide a flexible solution for integrating different components or systems, allowing them to work together seamlessly.
+
+#### Cons:
+
+- Complexity: Adding an adapter can introduce an additional layer of complexity to your code, which can make it harder to understand and maintain.
+- Overuse: Overusing the Adapter pattern can lead to code that is difficult to understand and maintain, as well as unnecessary layers of abstraction.
+- Performance: The use of an adapter can introduce a performance penalty, as it requires additional processing to translate between the two interfaces. However, this is usually negligible for most applications.
 
 ### [Decorator Pattern](lib/decorator/)
 
@@ -42,13 +69,13 @@ In the Decorator pattern, a decorator class is used to wrap the original object 
                  +----------------+
                           ^
                           |
-           +--------------------------+
-           |                          |
-   +----------------+         +----------------+
-   | Concrete CompA |         | Concrete CompB |
-   +----------------+         +----------------+
-   | + operation()  |         | + operation()  |
-   +----------------+         +----------------+
+            +----------------------------+
+            |                            |
+      +----------------+         +----------------+
+      | Concrete CompA |         | Concrete CompB |
+      +----------------+         +----------------+
+      | + operation()  |         | + operation()  |
+      +----------------+         +----------------+
 ```
 
 #### Pros:
@@ -77,11 +104,11 @@ The Factory Method pattern is a creational design pattern that provides an inter
                +-------------------+              +----------------+
                       ^                                   ^
                       |                                   |
-+---------------------------------+        +-------------------------------+
-|    ConcreteCreator              |        |    ConcreteProduct            |
-+---------------------------------+        +-------------------------------+
-|  factoryMethod() : Product      |        |  operation() : void           |
-+---------------------------------+        +-------------------------------+
+      +---------------------------------+        +-------------------------------+
+      |    ConcreteCreator              |        |    ConcreteProduct            |
+      +---------------------------------+        +-------------------------------+
+      |  factoryMethod() : Product      |        |  operation() : void           |
+      +---------------------------------+        +-------------------------------+
 ```
 
 #### Pros:
