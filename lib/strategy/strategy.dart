@@ -17,7 +17,6 @@ class Context {
 
   Strategy _strategy;
 
-  // ignore: use_setters_to_change_properties
   void setStrategy(Strategy strategy) => _strategy = strategy;
 
   void executeStrategy() => _strategy.execute();
