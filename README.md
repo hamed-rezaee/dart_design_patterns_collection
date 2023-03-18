@@ -18,6 +18,7 @@ The repository contains examples of the following design patterns:
 - [Proxy Pattern](lib/proxy/)
 - [Repository Pattern](lib/repository/)
 - [Singleton Pattern](lib/singleton/)
+- [Strategy Pattern](lib/strategy/)
 
 ---
 
@@ -299,3 +300,32 @@ The Singleton pattern is a creational design pattern that ensures a class has on
 - Testability: The Singleton Pattern can make it more difficult to test code, since it relies on a global instance that cannot be easily replaced or modified for testing purposes.
 - Concurrency issues: The Singleton Pattern can lead to concurrency issues in multithreaded environments, since multiple threads may attempt to access or modify the same instance of the object.
 - Hidden dependencies: The Singleton Pattern can create hidden dependencies in the code, since other classes may rely on the singleton instance without explicitly stating their dependencies.
+
+### [Strategy Pattern](lib/strategy/)
+
+The Strategy Pattern is a behavioral design pattern that allows you to define a family of algorithms, encapsulate each one as an object, and make them interchangeable at runtime. The pattern separates the algorithm implementation from the client code that uses it, which makes it easier to add new algorithms or modify existing ones without affecting the client code.
+
+The basic idea behind the Strategy Pattern is to define a common interface for all algorithms in the family. This interface defines a set of methods that the client code can use to interact with the algorithm objects. Each algorithm implementation is then encapsulated in a separate class that implements the common interface.
+
+```
+   +---------------------+            +------------------+           +------------------+
+   | Context             |<>----------| Strategy         |<>-------->| ConcreteStrategy |
+   |---------------------|            |------------------|           |------------------|
+   | -strategy:          |            | +execute():void  |           | +execute():void  |
+   | +setStrategy()      |            +------------------|           +------------------+
+   | +executeStrategy()  |
+   +---------------------+
+```
+
+#### Pros:
+
+- Reusability: The Strategy Pattern promotes code reuse by allowing the client code to reuse the same Context object with different Strategy objects, rather than creating a new object for each algorithm.
+- Flexibility: The Strategy Pattern makes it easy to switch between different algorithm implementations at runtime, which can be useful in situations where the algorithm requirements change frequently.
+- Maintainability: The Strategy Pattern separates the algorithm implementation from the client code, which makes it easier to modify or add new algorithms without affecting the existing code.
+- Testability: The Strategy Pattern makes it easier to test the algorithm implementations in isolation, which can be useful in situations where the algorithms are complex or require extensive testing.
+
+#### Cons:
+
+- Complexity: The Strategy Pattern adds an additional layer of complexity to the code, which can make it harder to understand or maintain.
+- Memory overhead: The Strategy Pattern requires the creation of additional objects for each algorithm implementation, which can increase memory usage.
+- Increased development time: Implementing the Strategy Pattern requires additional development time to create the interface or abstract class, implement the concrete classes, and integrate them with the client code.
